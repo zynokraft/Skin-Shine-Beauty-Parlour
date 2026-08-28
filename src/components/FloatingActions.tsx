@@ -20,7 +20,7 @@ export const FloatingActions: React.FC<FloatingActionsProps> = ({
       {/* Floating Buttons: WhatsApp & Call */}
       <div className="flex items-center gap-2.5 pointer-events-auto">
         <a
-          href="https://wa.me/919986554321?text=Hi%20Skin%20Shine%20Beauty%20Parlor,%20I%20would%20like%20to%20book%20an%20appointment."
+          href="https://wa.me/918495881919?text=Hi%20Skin%20Shine%20Beauty%20Parlor,%20I%20would%20like%20to%20book%20an%20appointment."
           target="_blank"
           rel="noopener noreferrer"
           className="w-12 h-12 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-lg hover:scale-105 active:scale-95 transition-transform shadow-emerald-500/30"
@@ -30,7 +30,7 @@ export const FloatingActions: React.FC<FloatingActionsProps> = ({
         </a>
 
         <a
-          href="tel:+919986554321"
+          href="tel:+918495881919"
           className="w-12 h-12 rounded-full bg-[#D82289] text-white flex items-center justify-center shadow-lg hover:scale-105 active:scale-95 transition-transform shadow-[#D82289]/40"
           title="Call Skin Shine"
         >

@@ -130,7 +130,7 @@ export const Header: React.FC<HeaderProps> = ({
           <div className="flex items-center gap-2.5 sm:gap-3">
             {/* Quick WhatsApp */}
             <a
-              href="https://wa.me/919986554321?text=Hi%20Skin%20Shine%20Beauty%20Parlor,%20I%20would%20like%20to%20inquire%20about%20your%20services%20and%20book%20an%20appointment."
+              href="https://wa.me/918495881919?text=Hi%20Skin%20Shine%20Beauty%20Parlor,%20I%20would%20like%20to%20inquire%20about%20your%20services%20and%20book%20an%20appointment."
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:inline-flex items-center justify-center p-2.5 rounded-xl bg-pink-50 text-[#25D366] hover:bg-emerald-50 transition-colors border border-pink-200"
@@ -141,7 +141,7 @@ export const Header: React.FC<HeaderProps> = ({
 
             {/* Quick Call */}
             <a
-              href="tel:+919986554321"
+              href="tel:+918495881919"
               className="hidden sm:inline-flex items-center justify-center p-2.5 rounded-xl bg-pink-50 text-[#D82289] hover:bg-pink-100 transition-colors border border-pink-200"
               title="Call Parlor"
             >
@@ -215,7 +215,7 @@ export const Header: React.FC<HeaderProps> = ({
 
           <div className="pt-3 border-t border-pink-100 flex items-center justify-between gap-3">
             <a
-              href="https://wa.me/919986554321"
+              href="https://wa.me/918495881919"
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 rounded-xl bg-[#25D366] text-white font-bold text-xs uppercase tracking-wider"
@@ -224,7 +224,7 @@ export const Header: React.FC<HeaderProps> = ({
               <span>WhatsApp Us</span>
             </a>
             <a
-              href="tel:+919986554321"
+              href="tel:+918495881919"
               className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 rounded-xl bg-[#200B26] text-white font-bold text-xs uppercase tracking-wider"
             >
               <Phone className="w-4 h-4 text-[#D82289]" />

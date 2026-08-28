@@ -175,7 +175,7 @@ export const BridalSection: React.FC<BridalSectionProps> = ({ onBookBridal }) =>
           </div>
 
           <a
-            href="https://wa.me/919986554321?text=Hi%20Skin%20Shine,%20I%20am%20looking%20for%20a%20bridal%20consultation%20and%20packages%20for%20my%20wedding."
+            href="https://wa.me/918495881919?text=Hi%20Skin%20Shine,%20I%20am%20looking%20for%20a%20bridal%20consultation%20and%20packages%20for%20my%20wedding."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-[#25D366] hover:bg-[#20BD5A] text-white font-bold text-xs uppercase tracking-wider whitespace-nowrap shadow-md transition-colors"

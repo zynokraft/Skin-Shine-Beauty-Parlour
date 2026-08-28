@@ -86,21 +86,6 @@ export const BookingModal: React.FC<BookingModalProps> = ({
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!customerName || !customerPhone) return;
-
-    // Trigger celebratory confetti
-    confetti({
-      particleCount: 80,
-      spread: 70,
-      origin: { y: 0.6 },
-      colors: ['#D82289', '#200B26', '#FDF2F4', '#10B981'],
-    });
-
-    setIsSubmitted(true);
-  };
-
   const generateWhatsAppUrl = () => {
     const serviceList = selectedServices.map((s) => `• ${s.name} (₹${s.price})`).join('\n');
     const msg = `*Appointment Booking Request - Skin Shine Beauty Parlor*
@@ -120,7 +105,35 @@ ${serviceList || '• General Consultation'}
 ━━━━━━━━━━━━━━━━━━━━
 Please confirm my appointment slot. Thank you!`;
 
-    return `https://wa.me/919986554321?text=${encodeURIComponent(msg)}`;
+    return `https://wa.me/918495881919?text=${encodeURIComponent(msg)}`;
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!customerName || !customerPhone) return;
+
+    // Trigger celebratory confetti
+    confetti({
+      particleCount: 80,
+      spread: 70,
+      origin: { y: 0.6 },
+      colors: ['#D82289', '#200B26', '#FDF2F4', '#10B981'],
+    });
+
+    const waUrl = generateWhatsAppUrl();
+    try {
+      const link = document.createElement('a');
+      link.href = waUrl;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (err) {
+      console.error('Auto whatsapp redirect error', err);
+    }
+
+    setIsSubmitted(true);
   };
 
   return (

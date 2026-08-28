@@ -121,7 +121,7 @@ export const LocationSection: React.FC = () => {
             {/* Direct Contact CTAs */}
             <div className="grid grid-cols-2 gap-3">
               <a
-                href="tel:+919986554321"
+                href="tel:+918495881919"
                 className="flex items-center justify-center gap-2 p-3.5 rounded-2xl bg-white border border-pink-200 text-[#200B26] font-bold text-xs uppercase tracking-wider hover:bg-pink-50 transition-colors shadow-sm"
               >
                 <Phone className="w-4 h-4 text-[#D82289]" />
@@ -129,7 +129,7 @@ export const LocationSection: React.FC = () => {
               </a>
 
               <a
-                href="https://wa.me/919986554321"
+                href="https://wa.me/918495881919"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 p-3.5 rounded-2xl bg-[#25D366] text-white font-bold text-xs uppercase tracking-wider hover:bg-[#20BD5A] transition-colors shadow-sm"

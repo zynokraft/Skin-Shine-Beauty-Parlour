@@ -7,15 +7,9 @@ import {
   Check,
   Plus,
   Search,
-  SlidersHorizontal,
   Info,
   X,
-  Heart,
   Calendar,
-  Baby,
-  Crown,
-  Scissors,
-  Eye,
 } from 'lucide-react';
 
 interface ServicesSectionProps {
@@ -205,112 +199,104 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                 <div
                   key={service.id}
                   id={`service-card-${service.id}`}
-                  className={`group relative bg-white rounded-3xl border transition-all duration-200 overflow-hidden flex flex-col justify-between ${
+                  className={`group relative bg-white rounded-3xl border transition-all duration-200 p-6 flex flex-col justify-between ${
                     selected
                       ? 'border-[#D82289] ring-2 ring-[#D82289]/30 shadow-lg shadow-pink-100'
-                      : 'border-pink-100 hover:border-[#D82289]/40 hover:shadow-md'
+                      : 'border-pink-200/80 hover:border-[#D82289]/40 hover:shadow-md'
                   }`}
                 >
-                  {/* Top Image & Badges */}
-                  <div className="relative aspect-[16/10] overflow-hidden bg-pink-50">
-                    <img
-                      src={service.image}
-                      alt={service.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      referrerPolicy="no-referrer"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-
-                    {/* Target & Special Badges */}
-                    <div className="absolute top-3 left-3 flex flex-wrap gap-1.5">
-                      <span className="px-2.5 py-0.5 rounded-full bg-white/90 backdrop-blur-sm text-[#200B26] text-[10px] font-bold uppercase tracking-wider shadow-sm">
-                        {service.target === 'Kids' ? '🧸 Kids' : service.target === 'Bridal' ? '👑 Bridal' : service.target}
-                      </span>
-                      {service.popular && (
-                        <span className="px-2.5 py-0.5 rounded-full bg-[#D82289] text-white text-[10px] font-bold uppercase tracking-wider flex items-center gap-1 shadow-sm">
-                          <Sparkles className="w-3 h-3" /> Most Booked
+                  <div>
+                    {/* Header with Badges, Duration & Info */}
+                    <div className="flex items-center justify-between gap-2 mb-3.5">
+                      <div className="flex flex-wrap items-center gap-1.5">
+                        <span className="px-2.5 py-0.5 rounded-full bg-pink-50 text-[#D82289] border border-pink-200 text-[10px] font-bold uppercase tracking-wider">
+                          {service.target === 'Kids' ? '🧸 Kids' : service.target === 'Bridal' ? '👑 Bridal' : service.target}
                         </span>
-                      )}
-                    </div>
-
-                    {/* Duration Badge */}
-                    <div className="absolute bottom-3 left-3 text-white text-xs font-medium flex items-center gap-1 bg-black/60 backdrop-blur-sm px-2.5 py-0.5 rounded-full">
-                      <Clock className="w-3.5 h-3.5 text-pink-200" />
-                      <span>{service.duration}</span>
-                    </div>
-
-                    {/* Quick Info Button */}
-                    <button
-                      onClick={() => setDetailService(service)}
-                      className="absolute bottom-3 right-3 p-1.5 rounded-full bg-white/90 hover:bg-white text-gray-700 hover:text-[#D82289] transition-colors shadow-sm cursor-pointer"
-                      title="View Details & Care Tips"
-                    >
-                      <Info className="w-4 h-4" />
-                    </button>
-                  </div>
-
-                  {/* Body Content */}
-                  <div className="p-5 flex-1 flex flex-col justify-between">
-                    <div>
-                      <h3 className="text-base font-bold text-[#200B26] group-hover:text-[#D82289] transition-colors">
-                        {service.name}
-                      </h3>
-                      <p className="text-xs text-gray-600 mt-1 line-clamp-2 leading-relaxed">
-                        {service.description}
-                      </p>
-
-                      {/* Benefits Bullets */}
-                      <ul className="mt-3 space-y-1.5">
-                        {service.benefits.slice(0, 2).map((benefit, idx) => (
-                          <li key={idx} className="flex items-start gap-2 text-xs text-gray-700">
-                            <Check className="w-3.5 h-3.5 text-[#D82289] flex-shrink-0 mt-0.5" />
-                            <span>{benefit}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Price and Add/Remove Action */}
-                    <div className="mt-5 pt-4 border-t border-pink-100 flex items-center justify-between gap-3">
-                      <div>
-                        <div className="flex items-baseline gap-2">
-                          <span className="text-lg font-extrabold text-[#200B26]">
-                            ₹{service.price.toLocaleString('en-IN')}
+                        {service.popular && (
+                          <span className="px-2.5 py-0.5 rounded-full bg-[#D82289] text-white text-[10px] font-bold uppercase tracking-wider flex items-center gap-1 shadow-sm">
+                            <Sparkles className="w-3 h-3" /> Most Booked
                           </span>
-                          {service.originalPrice && (
-                            <span className="text-xs text-gray-400 line-through">
-                              ₹{service.originalPrice.toLocaleString('en-IN')}
-                            </span>
-                          )}
-                        </div>
-                        {service.originalPrice && (
-                          <div className="text-[10px] text-emerald-600 font-bold">
-                            Save ₹{(service.originalPrice - service.price).toLocaleString('en-IN')}
-                          </div>
                         )}
                       </div>
 
-                      <button
-                        onClick={() => onToggleService(service)}
-                        className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
-                          selected
-                            ? 'bg-[#200B26] text-white shadow-sm'
-                            : 'bg-pink-50 hover:bg-[#D82289] text-[#D82289] hover:text-white border border-pink-200'
-                        }`}
-                      >
-                        {selected ? (
-                          <>
-                            <Check className="w-3.5 h-3.5 text-pink-200" />
-                            <span>Selected</span>
-                          </>
-                        ) : (
-                          <>
-                            <Plus className="w-3.5 h-3.5" />
-                            <span>Add</span>
-                          </>
-                        )}
-                      </button>
+                      <div className="flex items-center gap-2">
+                        <div className="text-gray-500 text-xs font-semibold flex items-center gap-1 bg-pink-50/70 border border-pink-100 px-2.5 py-0.5 rounded-full">
+                          <Clock className="w-3.5 h-3.5 text-[#D82289]" />
+                          <span>{service.duration}</span>
+                        </div>
+
+                        {/* Quick Info Button */}
+                        <button
+                          onClick={() => setDetailService(service)}
+                          className="p-1.5 rounded-full bg-pink-50 hover:bg-pink-100 text-gray-600 hover:text-[#D82289] transition-colors cursor-pointer"
+                          title="View Details & Care Tips"
+                        >
+                          <Info className="w-3.5 h-3.5" />
+                        </button>
+                      </div>
                     </div>
+
+                    {/* Menu Title */}
+                    <h3 className="text-lg font-bold text-[#200B26] group-hover:text-[#D82289] transition-colors leading-snug">
+                      {service.name}
+                    </h3>
+
+                    {/* Menu Description */}
+                    <p className="text-xs text-gray-600 mt-2 leading-relaxed">
+                      {service.description}
+                    </p>
+
+                    {/* Benefits Bullets */}
+                    <ul className="mt-3.5 space-y-1.5">
+                      {service.benefits.slice(0, 2).map((benefit, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-xs text-gray-700">
+                          <Check className="w-3.5 h-3.5 text-[#D82289] flex-shrink-0 mt-0.5" />
+                          <span>{benefit}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Price and Add/Remove Action */}
+                  <div className="mt-6 pt-4 border-t border-pink-100 flex items-center justify-between gap-3">
+                    <div>
+                      <div className="flex items-baseline gap-2">
+                        <span className="text-xl font-extrabold text-[#200B26]">
+                          ₹{service.price.toLocaleString('en-IN')}
+                        </span>
+                        {service.originalPrice && (
+                          <span className="text-xs text-gray-400 line-through">
+                            ₹{service.originalPrice.toLocaleString('en-IN')}
+                          </span>
+                        )}
+                      </div>
+                      {service.originalPrice && (
+                        <div className="text-[10px] text-emerald-600 font-bold">
+                          Save ₹{(service.originalPrice - service.price).toLocaleString('en-IN')}
+                        </div>
+                      )}
+                    </div>
+
+                    <button
+                      onClick={() => onToggleService(service)}
+                      className={`inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
+                        selected
+                          ? 'bg-[#200B26] text-white shadow-sm'
+                          : 'bg-pink-50 hover:bg-[#D82289] text-[#D82289] hover:text-white border border-pink-200'
+                      }`}
+                    >
+                      {selected ? (
+                        <>
+                          <Check className="w-3.5 h-3.5 text-pink-200" />
+                          <span>Selected</span>
+                        </>
+                      ) : (
+                        <>
+                          <Plus className="w-3.5 h-3.5" />
+                          <span>Add</span>
+                        </>
+                      )}
+                    </button>
                   </div>
                 </div>
               );
@@ -324,31 +310,25 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
       {detailService && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-in fade-in duration-200">
           <div className="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-pink-200">
-            <div className="relative aspect-[16/9] bg-pink-100">
-              <img
-                src={detailService.image}
-                alt={detailService.name}
-                className="w-full h-full object-cover"
-              />
+            <div className="bg-[#200B26] text-white p-5 flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-pink-300 bg-white/10 px-2.5 py-1 rounded-full border border-pink-400/20">
+                  {detailService.category}
+                </span>
+                <span className="text-xs text-pink-200 font-medium flex items-center gap-1">
+                  <Clock className="w-3.5 h-3.5 text-[#D82289]" />
+                  {detailService.duration}
+                </span>
+              </div>
               <button
                 onClick={() => setDetailService(null)}
-                className="absolute top-3 right-3 p-2 rounded-full bg-black/50 hover:bg-black/80 text-white transition-colors cursor-pointer"
+                className="p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer"
               >
                 <X className="w-4 h-4" />
               </button>
             </div>
 
             <div className="p-6 space-y-4">
-              <div className="flex items-center justify-between">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#D82289] bg-pink-50 px-2.5 py-1 rounded-full border border-pink-200">
-                  {detailService.category}
-                </span>
-                <span className="text-xs text-gray-500 font-medium flex items-center gap-1">
-                  <Clock className="w-3.5 h-3.5 text-[#D82289]" />
-                  {detailService.duration}
-                </span>
-              </div>
-
               <h3 className="text-xl font-bold text-[#200B26]">
                 {detailService.name}
               </h3>
