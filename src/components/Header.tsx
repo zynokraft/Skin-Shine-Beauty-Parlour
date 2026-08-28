@@ -91,7 +91,7 @@ export const Header: React.FC<HeaderProps> = ({
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-6 text-xs font-bold uppercase tracking-[0.14em] text-[#200B26]">
+          <nav className="hidden lg:flex items-center gap-7 text-xs font-bold uppercase tracking-[0.14em] text-[#200B26]">
             <a
               href="#services"
               className="hover:text-[#D82289] transition-colors py-1 relative group"
@@ -108,25 +108,9 @@ export const Header: React.FC<HeaderProps> = ({
             </a>
             <a
               href="#kids"
-              className="hover:text-[#D82289] transition-colors py-1 relative group flex items-center gap-1.5"
-            >
-              Kids Corner
-              <span className="bg-pink-100 text-[#D82289] text-[9px] font-bold px-1.5 py-0.2 rounded-full">
-                Gentle
-              </span>
-            </a>
-            <button
-              onClick={onOpenQuiz}
-              className="hover:text-[#D82289] transition-colors py-1 flex items-center gap-1.5 text-[#200B26] uppercase tracking-[0.14em] cursor-pointer"
-            >
-              <Sparkles className="w-3.5 h-3.5 text-[#D82289]" />
-              Skin Advisor
-            </button>
-            <a
-              href="#reviews"
               className="hover:text-[#D82289] transition-colors py-1 relative group"
             >
-              Reviews (4.9★)
+              Kids Corner
               <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#D82289] transition-all group-hover:w-full" />
             </a>
             <a
@@ -137,7 +121,8 @@ export const Header: React.FC<HeaderProps> = ({
               }}
               className="hover:text-[#D82289] transition-colors py-1 relative group"
             >
-              Location
+              Contact Us
+              <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#D82289] transition-all group-hover:w-full" />
             </a>
           </nav>
 
@@ -212,28 +197,9 @@ export const Header: React.FC<HeaderProps> = ({
             <a
               href="#kids"
               onClick={() => setMobileMenuOpen(false)}
-              className="px-3.5 py-2.5 rounded-xl bg-pink-50/70 border border-pink-100 flex items-center justify-between font-bold"
+              className="px-3.5 py-2.5 rounded-xl bg-pink-50/70 border border-pink-100 font-bold"
             >
-              <span>Kids Beauty & Hair Care</span>
-              <span className="text-[10px] bg-pink-200 text-[#D82289] px-2 py-0.5 rounded-full font-bold">Gentle</span>
-            </a>
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenQuiz();
-              }}
-              className="w-full text-left px-3.5 py-2.5 rounded-xl bg-pink-50/70 border border-pink-100 text-[#200B26] font-bold flex items-center gap-2"
-            >
-              <Sparkles className="w-3.5 h-3.5 text-[#D82289]" />
-              <span>Skin & Hair Analyzer Quiz</span>
-            </button>
-            <a
-              href="#reviews"
-              onClick={() => setMobileMenuOpen(false)}
-              className="px-3.5 py-2.5 rounded-xl bg-pink-50/70 border border-pink-100 flex items-center justify-between font-bold"
-            >
-              <span>Live Google Reviews</span>
-              <span className="text-[10px] font-bold text-white bg-[#D82289] px-2 py-0.5 rounded-full">⭐ 4.9</span>
+              Kids Corner
             </a>
             <a
               href="#location"
@@ -243,7 +209,7 @@ export const Header: React.FC<HeaderProps> = ({
               }}
               className="px-3.5 py-2.5 rounded-xl bg-pink-50/70 border border-pink-100 font-bold"
             >
-              Location & Directions
+              Contact Us
             </a>
           </nav>
 
