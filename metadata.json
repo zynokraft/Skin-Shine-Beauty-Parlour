@@ -1,0 +1,6 @@
+{
+  "name": "Skin Shine Beauty Parlor",
+  "description": "Premium Ladies and Kids Beauty Parlor in Bangalore with live Google ratings, service menu, online booking, skin analyzer, and customer reviews.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

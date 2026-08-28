@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    background-color: #FCFAF7;
+    color: #2D241E;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Libre Baskerville', Georgia, serif;
+  }
+
+  .font-sans-ui {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  .font-serif-luxury {
+    font-family: 'Libre Baskerville', 'Playfair Display', Georgia, serif;
+  }
+}
+
+/* Custom Artistic Flair scrollbar utilities */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F3EFE9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C5A059;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A88640;
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #D4AF37 0%, #C5A059 50%, #A88640 100%);
+}
+
+.gold-gradient-soft {
+  background: linear-gradient(135deg, #FCFAF7 0%, #F3EFE9 50%, #E9E1D6 100%);
+}
+
+.gold-glow {
+  box-shadow: 0 10px 30px -10px rgba(197, 160, 89, 0.35);
+}
+
